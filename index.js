@@ -18,5 +18,9 @@ function displayRepositories(results){
   $("#results").html(repos);
 }
 
+function displayError(){
+
+}
+
 $(document).ready(function (){
 });
