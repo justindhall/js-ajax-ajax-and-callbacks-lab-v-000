@@ -19,7 +19,7 @@ function displayRepositories(results){
 }
 
 function displayError(){
-
+  $("#errors").html("No stupid, not that way. You did it wrong.");
 }
 
 $(document).ready(function (){
