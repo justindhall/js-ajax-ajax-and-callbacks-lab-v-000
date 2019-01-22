@@ -22,8 +22,17 @@ function displayError(){
   $("#errors").html("I'm sorry, there's been an error. Please try again.");
 }
 
-function showCommits(){
-  const seachTerms = ("#searchTerms").val();
+function showCommits(el){
+  const owner = el.dataset.owner;
+  const repo = el.dataset.repository;
+  const searchUrl = `${url}/repos/${owner}/${repo}/commits`;
+  $.get(searchUrl, data => displayCommits(data)).fail(error => displayError());
+}
+
+function displayCommits(data){
+  const commits = data.map(commit => `<li>${commit.sha}<p>${commit.commit.message}</p></li>)`.join("");
+  const commitsString = `<ul>${commits}</ul>`;
+  $("details").html(commitsString);
 }
 
 $(document).ready(function (){
