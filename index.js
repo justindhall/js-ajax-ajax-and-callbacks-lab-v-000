@@ -23,7 +23,7 @@ function displayError(){
 }
 
 function showCommits(){
-
+  const seachTerms = ("#searchTerms").value;
 }
 
 $(document).ready(function (){
