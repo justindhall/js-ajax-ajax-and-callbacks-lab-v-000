@@ -1,8 +1,8 @@
 const url = "https://api.github.com";
 
 function searchRepositories(){
-  const searchTarget = $("#seachTerms").val();
-  const searchUrl = `${url}/search/repositories?q=${searchTarget}`;
+  const searchTerms = $("#seachTerms").val();
+  const searchUrl = `${url}/search/repositories?q=${searchTerms}`;
 
   $.get(searchUrl, data => displayRepositories(data)).fail(error => displayError());
 }
